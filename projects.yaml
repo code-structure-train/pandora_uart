@@ -1,6 +1,8 @@
 projects:
   pandora:
   - project_cubemx.yaml
+  pandora-rtt:
+  - project_rtthread.yaml
 settings:
   export_dir:
   - generate_project
