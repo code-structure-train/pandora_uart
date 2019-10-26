@@ -1,0 +1,33 @@
+common:
+  includes:
+  - Drivers
+  - Drivers/CMSIS
+  - Drivers/CMSIS/Device
+  - Drivers/CMSIS/Device/ST
+  - Drivers/CMSIS/Device/ST/STM32L4xx
+  - Drivers/CMSIS/Device/ST/STM32L4xx/Include
+  - Drivers/CMSIS/Include
+  - Drivers/STM32L4xx_HAL_Driver
+  - Drivers/STM32L4xx_HAL_Driver/Inc
+  - Drivers/STM32L4xx_HAL_Driver/Inc/Legacy
+  - Inc
+  sources:
+    Drivers:
+    - Drivers/STM32L4xx_HAL_Driver/Src
+    IDE:
+    - IDE/IAR
+    - IDE/MDK5
+    Src:
+    - Src
+  target:
+  - pandora
+tool_specific:
+  iar_arm:
+    linker_file:
+    - IDE/IAR/stm32l475xx_flash.icf
+  make_gcc_arm:
+    linker_file:
+    - IDE/GCC/STM32L475VETx_FLASH.ld
+  uvision:
+    linker_file:
+    - IDE/MDK5/stm32l475ve.sct
