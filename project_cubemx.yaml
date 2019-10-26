@@ -14,20 +14,64 @@ common:
   sources:
     Drivers:
     - Drivers/STM32L4xx_HAL_Driver/Src
-    IDE:
-    - IDE/IAR
-    - IDE/MDK5
+
     Src:
     - Src
   target:
   - pandora
-tool_specific:
+tool_specific: 
+  uvision5:
+    macros:
+    - USE_HAL_DRIVER
+    - STM32L475xx
+    sources:
+      StartUp:
+      - IDE/MDK5
+    linker_file:
+    - IDE/MDK5/stm32l475ve.sct
   iar_arm:
+    macros:
+    - USE_HAL_DRIVER
+    - STM32L475xx    
+    sources:
+      StartUp:
+      - IDE/IAR
     linker_file:
     - IDE/IAR/stm32l475xx_flash.icf
   make_gcc_arm:
+    macros:
+    - USE_HAL_DRIVER
+    - STM32L475xx    
+    sources:
+      StartUp:
+      - IDE/GCC/startup_stm32l475xx.S
     linker_file:
     - IDE/GCC/STM32L475VETx_FLASH.ld
-  uvision:
-    linker_file:
-    - IDE/MDK5/stm32l475ve.sct
+    misc:
+      standard_libraries:
+      - m
+      - gcc
+      - c
+      - nosys
+      - stdc++
+      common_flags:
+      - -O0
+      - -g
+      - -ggdb
+      - -Wall
+      - -fno-strict-aliasing
+      - -ffunction-sections
+      - -fdata-sections
+      - -fno-exceptions
+      - -fno-delete-null-pointer-checks
+      - -fmessage-length=0
+      - -fno-builtin
+      - -mthumb
+      ld_flags:
+      - -specs=nano.specs
+      - -Wl,--gc-sections
+      cxx_flags:
+      - -fno-rtti
+      - -std=gnu++98
+      c_flags:
+      - -std=c99
