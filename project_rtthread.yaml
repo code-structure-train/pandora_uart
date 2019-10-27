@@ -73,7 +73,7 @@ tool_specific:
       RTThread:
       - Libraries/rt-thread/libcpu/arm/cortex-m4/context_gcc.S
     linker_file:
-    - IDE/GCC/STM32L475VETx_FLASH.ld
+    - IDE/GCC/link.lds
     misc:
       standard_libraries:
       - m
