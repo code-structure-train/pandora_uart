@@ -4,6 +4,10 @@ progen init -p pandora -tar pandora
 生成工程
 progen generate -f projects.yaml -p pandora -t uvision5
 progen generate -f projects.yaml -p pandora -t iar_arm
+progen generate -f projects.yaml -p pandora -t make_gcc_arm
+progen generate -f projects.yaml -p pandora-rtt -t uvision5
+progen generate -f projects.yaml -p pandora-rtt -t iar_arm
+progen generate -f projects.yaml -p pandora-rtt -t make_gcc_arm
 
 加入 rt-thread 精简内核
 git submodule add https://github.com/SuWeipeng/rt-thread.git Libraries/rt-thread
