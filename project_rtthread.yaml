@@ -18,13 +18,24 @@ common:
   - Libraries/rt-thread/components/drivers
   - Libraries/rt-thread/components/drivers/include
   - Libraries/rt-thread/components/drivers/include/drivers/pin.h
+  - Libraries/rt-thread/components/drivers/include/drivers/serial.h
   - Libraries/rt-thread/HAL_Drivers
+  - Libraries/rt-thread/HAL_Drivers/config
+  - Libraries/rt-thread/HAL_Drivers/config/l4
   - Libraries/rt-thread/include
   - Libraries/rt-thread/include/libc
   sources:
     Drivers:
     - Drivers/STM32L4xx_HAL_Driver/Src
-
+    RTThread:
+    - Drivers/RTT_Driver/Src
+    - Libraries/rt-thread/board-pandora
+    - Libraries/rt-thread/components/drivers/misc/pin.c
+    - Libraries/rt-thread/components/drivers/serial/serial.c
+    - Libraries/rt-thread/components/drivers/src
+    - Libraries/rt-thread/HAL_Drivers
+    - Libraries/rt-thread/libcpu/arm/cortex-m4/cpuport.c
+    - Libraries/rt-thread/src
     Src:
     - Src-rtt
   target:
