@@ -59,7 +59,7 @@ static void MX_DMA_Init(void);
 static void MX_USART3_UART_Init(void);
 static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
-int example_uart_init(void);
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -101,7 +101,6 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   rt_pin_mode(LED_R_PIN, PIN_MODE_OUTPUT);
-  example_uart_init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
