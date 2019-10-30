@@ -98,7 +98,6 @@ int main(void)
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
   rt_pin_mode(LED_R_PIN, PIN_MODE_OUTPUT);
-  uart_sample(0, NULL);
   /* USER CODE END 2 */
 
   /* Infinite loop */

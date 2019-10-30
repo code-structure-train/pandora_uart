@@ -27,7 +27,7 @@ static void serial_thread_entry(void *parameter)
     }
 }
 
-int uart_sample(int argc, char *argv[])
+static int uart_sample(int argc, char *argv[])
 {
     rt_err_t ret = RT_EOK;
     char uart_name[RT_NAME_MAX];
