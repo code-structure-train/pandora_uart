@@ -37,7 +37,6 @@ common:
     - Libraries/rt-thread/components/drivers/src/dataqueue.c
     - Libraries/rt-thread/components/finsh/cmd.c
     - Libraries/rt-thread/components/finsh/msh.c
-    - Libraries/rt-thread/components/finsh/msh_cmd.c
     - Libraries/rt-thread/components/finsh/msh_file.c
     - Libraries/rt-thread/components/finsh/shell.c
     - Libraries/rt-thread/components/finsh/symbol.c
