@@ -111,9 +111,10 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    char buf[30];
-    sprintf(buf, "PB9 %d\r\n", GET_PIN(B, 9));
-    rt_kputs(buf);
+    return 0;
+    //char buf[30];
+    //sprintf(buf, "PB9 %d\r\n", GET_PIN(B, 9));
+    //rt_kputs(buf);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
