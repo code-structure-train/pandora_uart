@@ -49,7 +49,7 @@ UART_HandleTypeDef huart3;
 DMA_HandleTypeDef hdma_usart3_rx;
 
 /* USER CODE BEGIN PV */
-
+static rt_timer_t led_timer;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -64,7 +64,10 @@ static void MX_GPIO_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+static void timeout(void *parameter)
+{
+    rt_pin_write(LED_R_PIN, !rt_pin_read(LED_R_PIN));
+}
 /* USER CODE END 0 */
 
 /**
@@ -101,14 +104,14 @@ int main(void)
   //MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   rt_pin_mode(LED_R_PIN, PIN_MODE_OUTPUT);
+  RTT_TIMER_CREATE(led,timeout,RT_NULL,1000,RT_TIMER_FLAG_SOFT_TIMER|RT_TIMER_FLAG_PERIODIC);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    rt_pin_write(LED_R_PIN, !rt_pin_read(LED_R_PIN));
-    rt_thread_delay(500);
+    return 0;
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
