@@ -31,6 +31,7 @@ common:
     RTThread:
     - Drivers/RTT_Driver/Src
     - Libraries/rt-thread/board-pandora
+    - Libraries/rt-thread/components/drivers/i2c
     - Libraries/rt-thread/components/drivers/misc/pin.c
     - Libraries/rt-thread/components/drivers/serial/serial.c
     - Libraries/rt-thread/components/drivers/src/completion.c
